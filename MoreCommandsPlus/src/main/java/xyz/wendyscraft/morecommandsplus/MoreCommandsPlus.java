@@ -16,7 +16,7 @@ public final class MoreCommandsPlus extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        getServer().getLogger().info("MoreCommandsPlus has Started");
+        getServer().getLogger().info("[MoreCommands+] MoreCommandsPlus has Started");
 
         getCommand("god").setExecutor(new GodCommand());
         getCommand("feed").setExecutor(new FeedCommand());
@@ -40,7 +40,7 @@ public final class MoreCommandsPlus extends JavaPlugin {
             String food = getConfig().getString("Food");
             int number = getConfig().getInt("Number");
             boolean Booled = getConfig().getBoolean("Boolean");
-            String thirdItem = getConfig().getStringList("Foodlist").get(2);
+            String thirdItem = getConfig().getStringList("FoodList").get(2);
 
             player.sendMessage(ChatColor.BLUE + "The food in the config is " + ChatColor.AQUA + food);
             player.sendMessage(ChatColor.GREEN + "The color in the config is " + ChatColor.RED + number);
@@ -56,7 +56,7 @@ public final class MoreCommandsPlus extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        getServer().getLogger().info("MoreCommandsPlus hus Shutdown");
+        getServer().getLogger().info("[MoreCommands+] MoreCommandsPlus hus Shutdown");
         // Plugin shutdown logic
     }
 }
