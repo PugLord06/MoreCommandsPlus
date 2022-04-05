@@ -19,10 +19,10 @@ public class FlyCommand implements CommandExecutor {
 
             if ((p.getAllowFlight())){
                 p.setAllowFlight(false);
-                p.sendMessage(ChatColor.DARK_RED + "You are not flying");
+                p.sendMessage(ChatColor.DARK_RED + "Flight Disabled");
             }else {
                 p.setAllowFlight(true);
-                p.sendMessage(ChatColor.LIGHT_PURPLE + "You are now flying");
+                p.sendMessage(ChatColor.LIGHT_PURPLE + "Flight Enabled");
             }
 
         }
