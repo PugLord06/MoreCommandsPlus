@@ -1,0 +1,26 @@
+name: MoreCommandsPlus
+version: '1.0-SNAPSHOT'
+main: xyz.wendyscraft.morecommandsplus.MoreCommandsPlus
+api-version: 1.18
+authors: [ Cosmic_Burger ]
+description: An Improved Version of MoreCommandsPlus
+commands:
+  god:
+    description: Makes the Player Invinsible
+    usage: /<command>
+    aliases:
+      - invincible
+      - pro
+  feed:
+    description: Full the players Hunger
+    usage: /<command>
+  printMessageFromConfig:
+    description: Command that shows config
+  heal:
+    description: Heals The player to max hearts
+    usage: /<command>
+  fly:
+    description: Allows for flight of the Player
+    usage: /<command>
+
+
