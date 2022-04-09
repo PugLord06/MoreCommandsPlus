@@ -22,5 +22,8 @@ commands:
   fly:
     description: Allows for flight of the Player
     usage: /<command>
+  setFood:
+    description: Sets the food to Shrimp
+    usage: /<command>
 
 

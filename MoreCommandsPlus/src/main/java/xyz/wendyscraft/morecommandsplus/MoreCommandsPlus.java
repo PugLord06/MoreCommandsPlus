@@ -45,6 +45,9 @@ public final class MoreCommandsPlus extends JavaPlugin {
             player.sendMessage(ChatColor.BLUE + "The food in the config is " + ChatColor.AQUA + food);
             player.sendMessage(ChatColor.GREEN + "The color in the config is " + ChatColor.RED + number);
             player.sendMessage(ChatColor.BLACK + "The color in the config is " + ChatColor.YELLOW + Booled);
+            player.sendMessage(ChatColor.DARK_PURPLE + "The third food in the config is " + ChatColor.RED + thirdItem);
+        }else  if(command.getName().equals("setFood")){
+            getConfig().set("Food", "Shrimp");
         }
 
 
