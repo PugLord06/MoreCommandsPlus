@@ -5,10 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-import xyz.wendyscraft.morecommandsplus.commands.FeedCommand;
-import xyz.wendyscraft.morecommandsplus.commands.FlyCommand;
-import xyz.wendyscraft.morecommandsplus.commands.GodCommand;
-import xyz.wendyscraft.morecommandsplus.commands.HealCommand;
+import xyz.wendyscraft.morecommandsplus.commands.*;
 import xyz.wendyscraft.morecommandsplus.listeners.PigKillListener;
 
 public final class MoreCommandsPlus extends JavaPlugin {
@@ -22,6 +19,7 @@ public final class MoreCommandsPlus extends JavaPlugin {
         getCommand("feed").setExecutor(new FeedCommand());
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("fly").setExecutor(new FlyCommand());
+        getCommand("repeat").setExecutor(new RepeatCommand());
         getServer().getPluginManager().registerEvents(new PigKillListener(), this);
 
 

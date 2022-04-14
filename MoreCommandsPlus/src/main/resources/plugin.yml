@@ -25,5 +25,8 @@ commands:
   setFood:
     description: Sets the food to Shrimp
     usage: /<command>
+  repeat:
+    description: Repeats what the player has typed
+    usage: /<commmand>
 
 
