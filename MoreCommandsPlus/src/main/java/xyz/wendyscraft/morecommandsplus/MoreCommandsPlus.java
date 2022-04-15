@@ -10,9 +10,15 @@ import xyz.wendyscraft.morecommandsplus.listeners.PigKillListener;
 
 public final class MoreCommandsPlus extends JavaPlugin {
 
+
+
     @Override
     public void onEnable() {
         // Plugin startup logic
+
+
+
+
         getServer().getLogger().info("[MoreCommands+] MoreCommandsPlus has Started");
 
         getCommand("god").setExecutor(new GodCommand());
@@ -20,7 +26,8 @@ public final class MoreCommandsPlus extends JavaPlugin {
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("fly").setExecutor(new FlyCommand());
         getCommand("repeat").setExecutor(new RepeatCommand());
-        getServer().getPluginManager().registerEvents(new PigKillListener(), this);
+        getCommand("printfood").setExecutor(new RepeatCommand());
+        getServer().getPluginManager().registerEvents(new PigKillListener(this), this);
 
 
 
@@ -43,9 +50,6 @@ public final class MoreCommandsPlus extends JavaPlugin {
             player.sendMessage(ChatColor.BLUE + "The food in the config is " + ChatColor.AQUA + food);
             player.sendMessage(ChatColor.GREEN + "The color in the config is " + ChatColor.RED + number);
             player.sendMessage(ChatColor.BLACK + "The color in the config is " + ChatColor.YELLOW + Booled);
-            player.sendMessage(ChatColor.DARK_PURPLE + "The third food in the config is " + ChatColor.RED + thirdItem);
-        }else  if(command.getName().equals("setFood")){
-            getConfig().set("Food", "Shrimp");
         }
 
 
@@ -57,7 +61,12 @@ public final class MoreCommandsPlus extends JavaPlugin {
 
     @Override
     public void onDisable() {
+
+
         getServer().getLogger().info("[MoreCommands+] MoreCommandsPlus hus Shutdown");
         // Plugin shutdown logic
     }
+
+
+
 }
