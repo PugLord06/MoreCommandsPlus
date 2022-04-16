@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.wendyscraft.morecommandsplus.commands.*;
 import xyz.wendyscraft.morecommandsplus.listeners.PigKillListener;
+import xyz.wendyscraft.morecommandsplus.listeners.SpawnListeners;
 
 public final class MoreCommandsPlus extends JavaPlugin {
 
@@ -17,8 +18,6 @@ public final class MoreCommandsPlus extends JavaPlugin {
         // Plugin startup logic
 
 
-
-
         getServer().getLogger().info("[MoreCommands+] MoreCommandsPlus has Started");
 
         getCommand("god").setExecutor(new GodCommand());
@@ -27,7 +26,12 @@ public final class MoreCommandsPlus extends JavaPlugin {
         getCommand("fly").setExecutor(new FlyCommand());
         getCommand("repeat").setExecutor(new RepeatCommand());
         getCommand("printfood").setExecutor(new RepeatCommand());
+        getCommand("setspawn").setExecutor(new SetSpawnCommand(this));
+        getCommand("spawn").setExecutor(new SpawnCommand(this));
+        getCommand("vault").setExecutor(new VaultCommand(this));
+
         getServer().getPluginManager().registerEvents(new PigKillListener(this), this);
+        getServer().getPluginManager().registerEvents(new SpawnListeners(this),this);
 
 
 

@@ -1,5 +1,6 @@
 package xyz.wendyscraft.morecommandsplus.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -17,12 +18,33 @@ public class FlyCommand implements CommandExecutor {
 
         if (sender instanceof Player p){
 
-            if ((p.getAllowFlight())){
-                p.setAllowFlight(false);
-                p.sendMessage(ChatColor.DARK_RED + "Flight Disabled");
+            if (args.length == 0) {
+
+                if ((p.getAllowFlight())) {
+                    p.setAllowFlight(false);
+                    p.sendMessage(ChatColor.DARK_RED + "Flight Disabled");
+                } else {
+                    p.setAllowFlight(true);
+                    p.sendMessage(ChatColor.LIGHT_PURPLE + "Flight Enabled");
+                }
             }else {
-                p.setAllowFlight(true);
-                p.sendMessage(ChatColor.LIGHT_PURPLE + "Flight Enabled");
+                String playerName = args[0];
+
+                Player target = Bukkit.getServer().getPlayerExact(playerName);
+
+                if (target == null){
+                    p.sendMessage(ChatColor.DARK_RED + "This player is not online");
+                }else {
+                    if ((target.getAllowFlight())){
+                        p.sendMessage(ChatColor.BLUE + "You have disabled flight for" + target.getDisplayName());
+                        target.setAllowFlight(false);
+                        target.sendMessage(ChatColor.DARK_RED + "Flight Disabled");
+                    }else {
+                        p.sendMessage(ChatColor.AQUA + "You have enabled flight for " + target.getDisplayName());
+                        target.setAllowFlight(true);
+                        target.sendMessage(ChatColor.LIGHT_PURPLE + "Flight Enabled");
+                    }
+                }
             }
 
         }
