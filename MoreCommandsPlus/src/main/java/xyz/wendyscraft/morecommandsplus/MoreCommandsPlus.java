@@ -29,6 +29,7 @@ public final class MoreCommandsPlus extends JavaPlugin {
         getCommand("setspawn").setExecutor(new SetSpawnCommand(this));
         getCommand("spawn").setExecutor(new SpawnCommand(this));
         getCommand("vault").setExecutor(new VaultCommand(this));
+        getCommand("enderchest").setExecutor(new EnderChestCommand(this));
 
         getServer().getPluginManager().registerEvents(new PigKillListener(this), this);
         getServer().getPluginManager().registerEvents(new SpawnListeners(this),this);
