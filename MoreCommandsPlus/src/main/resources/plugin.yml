@@ -11,22 +11,48 @@ commands:
     aliases:
       - invincible
       - pro
+    permission: morecommandsplus.god
   feed:
     description: Full the players Hunger
     usage: /<command>
+    permission: morecommandsplus.feed
   printMessageFromConfig:
     description: Command that shows config
+    usage: /<command>
+    permission: morecommandsplus.printmessagefromconfig
   heal:
     description: Heals The player to max hearts
     usage: /<command>
+    permission: morecommandsplus.heal
   fly:
     description: Allows for flight of the Player
     usage: /<command>
-  setFood:
-    description: Sets the food to Shrimp
-    usage: /<command>
+    permission: morecommandsplus.fly
   repeat:
-    description: Repeats what the player has typed
-    usage: /<commmand>
-
-
+    description: Allows to repeat
+    usage: /<command>
+    permission: morecommandsplus.repeat
+  printfood:
+    description: Prints the food from the config
+    usage: /<command>
+    permission: morecommandsplus.printfood
+  setspawn:
+    description: Sets the servers Spawnpoint
+    usage: /<command>
+    permission: morecommandsplus.setspawn
+  spawn:
+    description: Allows the Player to teleport to spawn
+    usage: /<command>
+    permission: morecommandsplus.spawn
+  vault:
+    description: Open the players vault
+    usage: /<command>
+    permission: morecommandsplus.vault
+  enderchest:
+    description: Opens the users ender chest
+    usage: /<command>
+    permission: morecommandsplus.vault
+    aliases:
+      - ec
+      - echest
+      - enderc
